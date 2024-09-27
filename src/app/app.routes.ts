@@ -15,6 +15,14 @@ export const routes: Routes = [
     data: { title: 'List' },
   },
   {
+    path: 'add-product',
+    loadComponent: () =>
+      import('./pages/add-product/add-product.component').then(
+        (m) => m.AddProductComponent
+      ),
+    data: { title: 'List' },
+  },
+  {
     path: '**',
     loadComponent: () =>
       import('./pages/not-found/not-found.component').then(

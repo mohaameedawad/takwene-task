@@ -1,0 +1,75 @@
+<div class="form-container">
+  <h2>Add New Product</h2>
+  <form #productForm="ngForm" (ngSubmit)="addProduct()">
+    <div class="p-fluid">
+      <div class="row py-3" style="background-color: gainsboro">
+        <div class="col-md-6 col-sm-6">
+          <label for="ProductName">Product Name</label>
+          <input
+            id="ProductName"
+            type="text"
+            pInputText
+            [(ngModel)]="ProductName"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <label for="Quantity">Quantity</label>
+          <p-inputNumber
+            id="Quantity"
+            name="Quantity"
+            [(ngModel)]="Quantity"
+            required
+          ></p-inputNumber>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <label for="Price">Product Price</label>
+          <p-inputNumber
+            id="Price"
+            name="Price"
+            [(ngModel)]="ProductPrice"
+            required
+          ></p-inputNumber>
+        </div>
+        <div class="d-flex justify-content-end mt-3">
+          <button
+            type="submit"
+            style="
+              width: fit-content !important;
+              background-color: #146c43;
+              border: none;
+            "
+            pButton
+            label="Add Product"
+            [disabled]="!Quantity"
+            class="p-button-secondary me-3"
+          ></button>
+          <button
+            type="button"
+            style="
+              width: fit-content !important;
+              background-color: #146c43;
+              border: none;
+            "
+            pButton
+            label="Cancel"
+            (click)="resetProductFields()"
+          ></button>
+          <button
+            type="button"
+            style="
+              width: fit-content !important;
+              background-color: #146c43;
+              border: none;
+            "
+            pButton
+            label="Back to List"
+            routerLink="/list"
+            class="ms-3"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

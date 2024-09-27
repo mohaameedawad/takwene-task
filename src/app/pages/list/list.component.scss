@@ -1,0 +1,127 @@
+:host ::ng-deep .p-datatable-thead > tr > th {
+  text-align: center;
+  background-color: #146c43; /* Medium dark grey */
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #ced4da; /* Medium grey */
+}
+
+:host ::ng-deep .p-datatable-tbody > tr > td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ced4da; /* Medium grey */
+}
+
+:host ::ng-deep .p-datatable-tbody > tr.low-stock {
+  position: relative; /* This allows the absolute positioning of ::after to work */
+}
+
+:host ::ng-deep .p-datatable-tbody > tr.low-stock::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #146c43;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+:host ::ng-deep .p-datatable-tbody > tr > td > .product-img {
+  width: 70px;
+  height: auto;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+:host ::ng-deep .p-datatable-wrapper {
+  overflow-x: auto;
+}
+
+:host ::ng-deep .p-paginator {
+  margin-top: 10px;
+}
+
+:host ::ng-deep .p-paginator .p-paginator-current {
+  color: #71787e; /* Medium dark grey */
+}
+
+:host ::ng-deep .p-datatable-header {
+  background-color: #dcdcdd; /* Light grey */
+  padding: 10px;
+  border-bottom: 1px solid #ced4da; /* Medium grey */
+}
+
+:host ::ng-deep .p-inputnumber .p-inputnumber-input {
+  width: 80px !important;
+  text-align: center;
+  z-index: 2;
+}
+
+:host ::ng-deep .update-btn {
+  background-color: #146c43bc;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+:host ::ng-deep .update-btn:hover {
+  background-color: #146c43;
+}
+
+:host ::ng-deep .product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+// :host ::ng-deep .low-stock {
+//   // background-color: #d4fbe9cf; /* Light red background for low stock */
+// }
+
+:host ::ng-deep .edit-icon-btn {
+  background-color: transparent;
+  border: none;
+  color: #146c43;
+  cursor: pointer;
+  position: relative; /* Ensure position is relative for tooltip positioning */
+  z-index: 2;
+}
+
+:host ::ng-deep .edit-icon-btn:hover {
+  background-color: #146c43;
+  color: white !important;
+}
+
+:host ::ng-deep .edit-icon-btn::after {
+  content: attr(title);
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  z-index: 10;
+  white-space: nowrap;
+  display: none;
+}
+
+:host ::ng-deep .edit-icon-btn:hover::after {
+  display: block;
+}
+.orders-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px; /* Adjust margin as needed */
+  button {
+    background-color: #146c43;
+    border: none;
+  }
+}
