@@ -1,29 +1,30 @@
 .homeContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
+  height: 80vh;
 
   .display4 {
-    font-weight: bold; /* Make the heading bold */
+    // font-weight: 400;
     font-size: 2em;
   }
 
   p {
-    margin-bottom: 30px; /* Space below the paragraph */
+    margin-bottom: 30px;
     font-size: 1.5em;
   }
 
   .btn-custom {
-    background-color: #146c43; /* Button background color */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding */
+    background-color: #146c43;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
   }
 
   .btn-custom:hover {
-    background-color: #0c5030; /* Darker shade on hover */
+    background-color: #0c5030;
   }
 }
