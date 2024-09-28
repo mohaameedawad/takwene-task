@@ -1,6 +1,5 @@
 export const environment = {
-    production: false,
-    apiUrl: 'http://localhost:4200/api',
-    jsonBaseApi: 'assets/Json-Files/'
+  production: false,
+  apiUrl: 'http://localhost:4200/api',
+  jsonBaseApi: 'assets/Json-Files/',
 };
-  

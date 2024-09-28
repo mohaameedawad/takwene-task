@@ -1,8 +1,9 @@
 <div class="form-container">
   <h2>Add New Product</h2>
-  <form #productForm="ngForm" (ngSubmit)="addProduct()">
+  <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)">
     <div class="p-fluid">
       <div class="row py-3" style="background-color: gainsboro">
+        <!-- Product Name Field -->
         <div class="col-md-6 col-sm-6">
           <label for="ProductName">Product Name</label>
           <input
@@ -10,10 +11,20 @@
             type="text"
             pInputText
             [(ngModel)]="ProductName"
-            [ngModelOptions]="{ standalone: true }"
+            name="ProductName"
             required
           />
+          <div
+            *ngIf="
+              productForm.controls['ProductName']?.touched &&
+              productForm.controls['ProductName']?.invalid
+            "
+          >
+            <small class="p-error">Product Name is required</small>
+          </div>
         </div>
+
+        <!-- Quantity Field -->
         <div class="col-md-6 col-sm-6">
           <label for="Quantity">Quantity</label>
           <p-inputNumber
@@ -22,7 +33,17 @@
             [(ngModel)]="Quantity"
             required
           ></p-inputNumber>
+          <div
+            *ngIf="
+              productForm.controls['Quantity']?.touched &&
+              productForm.controls['Quantity']?.invalid
+            "
+          >
+            <small class="p-error">Quantity is required</small>
+          </div>
         </div>
+
+        <!-- Product Price Field -->
         <div class="col-md-6 col-sm-6">
           <label for="Price">Product Price</label>
           <p-inputNumber
@@ -31,8 +52,41 @@
             [(ngModel)]="ProductPrice"
             required
           ></p-inputNumber>
+          <div
+            *ngIf="
+              productForm.controls['Price']?.touched &&
+              productForm.controls['Price']?.invalid
+            "
+          >
+            <small class="p-error">Price is required</small>
+          </div>
         </div>
+
+        <!-- Product Image Field (Custom Styled) -->
+        <div class="col-md-6 col-sm-6">
+          <label for="ProductImg">Product Image</label>
+          <div class="custom-file-upload">
+            <input
+              class="custom-file-input"
+              type="file"
+              id="ProductImg"
+              (change)="onFileSelected($event)"
+              accept="image/png, image/jpeg, image/gif, image/jpg"
+            />
+            <label for="ProductImg" class="custom-file-label">
+              <div>
+                <span type="button" class="alternativeChooseFile">
+                  Choose File
+                </span>
+                <span class="file-name">{{ fileName }}</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Buttons Section -->
         <div class="d-flex justify-content-end mt-3">
+          <!-- Add Product Button -->
           <button
             type="submit"
             style="
@@ -42,9 +96,11 @@
             "
             pButton
             label="Add Product"
-            [disabled]="!Quantity"
             class="p-button-secondary me-3"
+            [disabled]="productForm.invalid"
           ></button>
+
+          <!-- Cancel Button -->
           <button
             type="button"
             style="
@@ -53,9 +109,11 @@
               border: none;
             "
             pButton
-            label="Cancel"
-            (click)="resetProductFields()"
+            label="Reset"
+            (click)="resetProductFields(productForm)"
           ></button>
+
+          <!-- Back to List Button -->
           <button
             type="button"
             style="
@@ -72,4 +130,5 @@
       </div>
     </div>
   </form>
+  <p-toast></p-toast>
 </div>

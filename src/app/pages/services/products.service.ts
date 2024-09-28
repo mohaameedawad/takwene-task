@@ -19,7 +19,7 @@ export class ProductsService {
       return of(this.products); // Return an observable
     }
 
-    const URL = environment.jsonBaseApi + 'products.json';
+    const URL = environment.jsonBaseApi + 'list.json';
     return this.http.get<Product[]>(URL).pipe(
       tap((res: Product[]) => {
         this.products = res;
