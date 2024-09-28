@@ -1,0 +1,44 @@
+:host ::ng-deep p-dropdown ul {
+  padding-left: 0 !important;
+}
+
+:host ::ng-deep p-button:hover {
+  background-color: #18623f !important;
+}
+
+.custom-file-upload {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+
+  .custom-file-input {
+    display: none; /* Hide the default file input */
+  }
+
+  .custom-file-label {
+    padding: 8px 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+
+    :active {
+      background-color: #d0d0d0; /* Change color on active */
+    }
+
+    .alternativeChooseFile {
+      width: fit-content !important;
+      background-color: gainsboro;
+      border: 1px solid lightslategray;
+      margin-right: 10px;
+      border-radius: 5px;
+      z-index: 0;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+  .file-name {
+    color: #666; /* Color for the file name */
+    line-height: 1.5; /* Align text vertically with the button */
+  }
+}

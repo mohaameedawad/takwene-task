@@ -1,0 +1,30 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 80vh;
+
+  .display4 {
+    // font-weight: 400;
+    font-size: 2em;
+  }
+
+  p {
+    margin-bottom: 30px;
+    font-size: 1.5em;
+  }
+
+  .btn-custom {
+    background-color: #146c43;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
+
+  .btn-custom:hover {
+    background-color: #0c5030;
+  }
+}
